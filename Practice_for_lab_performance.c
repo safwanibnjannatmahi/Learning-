@@ -1,3 +1,6 @@
+//------------------------------Lecture 1 problems---------------------------------------------------------------------
+
+
 /* 1. Taking 2 integer numbers as input and then add, subtract, multiply and divide them.
 
 Finally print the output results. 
@@ -25,11 +28,11 @@ int main(){
 
 #include <stdio.h>
 int main(){
-    float a, b, c, ave;
+    float a, b, C, ave;
     printf("enter the tree numbers: ");
-    scanf("%f %f %f", &a, &b, &c);
+    scanf("%f %f %f", &a, &b, &C);
 
-    ave=(a+b+c)/3;
+    ave=(a+b+C)/3;
     printf("Avarage is : %f\n", ave);
 
     return 0;
@@ -159,40 +162,44 @@ int main(){
 int main(void) {
     char ch;
     printf("Enter a character: ");
-    if (scanf(" %c", &ch) != 1) return 1;
-    printf("Character: '%c'  ASCII value: %d\n", ch, (unsigned char)ch);
+    if (scanf(" %C", &ch) != 1) return 1;
+    printf("Character: '%C'  ASCII value: %d\n", ch, (unsigned char)ch);
     return 0;
 }
 */
+
+//----------------------------------Lecture 3 problems----------------------------------------------------------
+
+
 
 /* 1. Find out the largest between three numbers using conditional operator. 
 #include <stdio.h>
 
 int main(){
-    int a, b, c, largest;
+    int a, b, C, largest;
     printf("Enter the three numbers: ");
-    if (scanf("%d %d %d", &a, &b, &c) != 3) {
+    if (scanf("%d %d %d", &a, &b, &C) != 3) {
         fprintf(stderr, "Invalid input\n");
         return 1;
     }
 
     // If all three are equal, report that first 
-    if ((a == b) && (b == c)){
+    if ((a == b) && (b == C)){
         printf("All three numbers are equal\n");
         return 0;
     }
 
     // Handle two-way ties explicitly 
-    if ((a == b) && (a > c)) {
+    if ((a == b) && (a > C)) {
         printf("%d and %d are largest (equal)\n", a, b);
         return 0;
     }
-    if ((a == c) && (a > b)) {
-        printf("%d and %d are largest (equal)\n", a, c);
+    if ((a == C) && (a > b)) {
+        printf("%d and %d are largest (equal)\n", a, C);
         return 0;
     }
-    if ((b == c) && (b > a)) {
-        printf("%d and %d are largest (equal)\n", b, c);
+    if ((b == C) && (b > a)) {
+        printf("%d and %d are largest (equal)\n", b, C);
         return 0;
     }
     return 0;
@@ -225,12 +232,12 @@ int main(){
 int main() {
     char ch;
     printf("Enter a character: ");
-    scanf(" %c", &ch);
+    scanf(" %C", &ch);
 
     if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
-        printf("The character '%c' is an alphabet.\n", ch);
+        printf("The character '%C' is an alphabet.\n", ch);
     } else {
-        printf("The character '%c' is not an alphabet.\n", ch);
+        printf("The character '%C' is not an alphabet.\n", ch);
     }
 
     return 0;
@@ -303,3 +310,232 @@ return 0;
     return 0;
 }
 */
+
+
+//----------------------------------lecture 4 --------------------------------------------------------------------------
+
+/* 2. Write a C program to input a character from the user and check whether the given
+ character is alphabet or not an alphabet using if else. 
+
+#include <stdio.h>
+int main(){
+
+    char alphabet;
+
+    printf("Plz input an charecter:");
+    scanf("%C", &alphabet);
+
+    if ((alphabet >= 'A' && alphabet <='Z') ||(alphabet >='a' && alphabet <= 'z')) {
+        printf("The charecter is an alphabet\n");
+    }
+
+    else{ printf("The charecter is not an alphabet\n");}
+    return 0;
+}*/
+
+
+/* 3. Write a program to check whether a triangle is valid or not, when the three angles of 
+the triangle are entered through the keyboard. A triangle is valid if the sum of all the three 
+angles is equal to 180 degrees.  
+#include <stdio.h>
+int main (){
+    int angle1, angle2, angle3, sum;
+
+    printf("Enter the three angles of the triangle: ");
+    scanf("%d %d %d", &angle1, &angle2, &angle3);
+
+    sum = angle1 + angle2 + angle3;
+
+    if (sum == 180) {
+        printf("The triangle is valid\n");
+    } else {
+        printf("The triangle is not valid\n");
+    }
+
+    return 0;
+}*/
+
+/* 4. Write a C program to check leap years using if else. 
+#include <stdio.h>
+int main(){
+    int year;
+    printf("Inter the year you want to check if it leap year or not;:");
+    scanf("%d", &year);
+
+    if ((year % 4 ==0 && year % 100 != 0)||(year % 100 ==0)){
+        printf("%d is a leap Year.", year);
+    }
+    else {printf("%d is not a leap year", year);
+    }
+    return 0;
+}*/
+
+/* 5. If the ages of Arif, Fahmid and Joy are input through the keyboard,
+      write a program to determine the youngest of the three. 
+#include <stdio.h>
+int main(void){
+    int arif, fahmid, joy;
+
+    printf("Input the age of Arif: ");
+    scanf("%d", &arif);
+
+    printf("Input the age of Fahmid: ");
+    scanf("%d", &fahmid);
+
+    printf("Input the age of Joy: ");
+    scanf("%d", &joy);
+
+    if (arif < fahmid && arif < joy) {
+        printf("Arif is the youngest (%d)\n", arif);
+    } else if (fahmid < arif && fahmid < joy) {
+        printf("Fahmid is the youngest (%d)\n", fahmid);
+    } else if (joy < arif && joy < fahmid) {
+        printf("Joy is the youngest (%d)\n", joy);
+    } else {
+        printf("There is a tie for the youngest age.\n");
+    }
+
+    return 0;
+}
+*/
+
+/* 6. Write a C program to input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer, calculate percentage and grade according to given conditions:
+
+            If percentage >= 90% : Grade A
+
+            If percentage >= 80% : Grade B
+
+            If percentage >= 70% : Grade C
+
+            If percentage >= 60% : Grade D
+
+            If percentage >= 40% : Grade E
+
+            If percentage < 40% : Grade F 
+#include <stdio.h>
+int main(){
+    int id;
+    float phy,chem,bio,math,com,all_sub,percentage,grade;
+    printf("please Input your student id:");
+    scanf("%d",&id);
+
+    printf("Now Inter Five subject Marks In a sequential order (phy,chem,bio,math,com):");
+    scanf("%f %f %f %f %f",&phy,&chem,&bio,&math,&com );
+
+    all_sub= phy+chem+bio+math+com;
+
+    percentage=(all_sub/500)*100;
+
+    if (percentage >= 90){
+        printf("%d your grade is 'A'", id);
+    }
+    else if (percentage >= 80){
+        printf("%d your grade is 'B'", id);
+    }
+    else if (percentage >= 70){
+        printf("%d your grade is 'C'", id);
+    }
+    else if (percentage >= 60){
+        printf("%d your grade is 'D'", id);
+    }
+    else if (percentage >= 40){
+        printf("%d your grade is 'E'", id);
+    }
+    else if (percentage < 40){
+        printf("%d your grade is 'F'", id);
+    }
+    else {
+        printf("Maybe Your given Number is invalid");
+    }
+return 0;
+}*/
+
+
+/* 7. An electric power distribution company charges its domestic consumers as follows:
+
+Consumption Units Rate of Charge
+
+0 – 200 Rs. 0.50 per unit
+
+201 – 400 Rs. 100 plus Rs. 0.65 per unit excess of 200
+
+401 – 600 Rs. 230 plus Rs. 0.80 per unit excess of 400
+
+601 and above Rs. 390 plus Rs. 1.00 per unit excess of 600
+
+ 
+
+Write a program that reads the power consumed by a customer and prints the amount to be paid by the customer. 
+#include <stdio.h>
+
+int main() {
+    int units;
+    float bill;
+
+    printf("Enter total units consumed: ");
+    scanf("%d", &units);
+
+    if (units <= 200) {
+        bill = units * 0.50;
+    }
+    else if (units <= 400) {
+        bill = 100 + (units - 200) * 0.65;
+    }
+    else if (units <= 600) {
+        bill = 230 + (units - 400) * 0.80;
+    }
+    else {
+        bill = 390 + (units - 600) * 1.00;
+    }
+
+    printf("Total Bill: Rs. %.2f\n", bill);
+
+    return 0;
+}*/
+
+/* 8. Write a c program for +,-,*,/operation using switch case. 
+#include <stdio.h>
+
+int main() {
+    char op;
+    float num1, num2, result;
+
+    printf("Enter an operator (+, -, *, /): ");
+    scanf("%c", &op);
+
+    printf("Enter two numbers: ");
+    scanf("%f %f", &num1, &num2);
+
+    switch(op) {
+        case '+':
+            result = num1 + num2;
+            printf("Result: %.2f\n", result);
+            break;
+
+        case '-':
+            result = num1 - num2;
+            printf("Result: %.2f\n", result);
+            break;
+
+        case '*':
+            result = num1 * num2;
+            printf("Result: %.2f\n", result);
+            break;
+
+        case '/':
+            if (num2 != 0)
+                result = num1 / num2;
+            else {
+                printf("Error! Division by zero.\n");
+                return 0;
+            }
+            printf("Result: %.2f\n", result);
+            break;
+
+        default:
+            printf("Invalid operator!\n");
+    }
+
+    return 0;
+}*/
+
