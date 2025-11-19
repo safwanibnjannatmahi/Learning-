@@ -539,3 +539,91 @@ int main() {
     return 0;
 }*/
 
+//--------------------------------------Loop------------------------------------------------------------------------
+
+/* 2.WAP to sum up numbers in a range. (For example: from 1 to 10) 
+#include <stdio.h>
+int main(){
+    int num1,num2 ,sum=0;
+    printf("Please inter the Number you want to star from: ");
+    scanf("%d",&num1);
+
+    printf("Now Inter the number you want to end:");
+    scanf("%d",&num2);
+    
+
+    while(num1 <= num2){
+        sum = sum + num1;
+        num1++;
+    }
+    printf("The sum is: %d\n", sum);
+return 0;
+}*/
+
+/* 3.If a five-digit number is input through the keyboard, write a program to calculate the sum of its digits.  
+#include <stdio.h>
+int main(){
+    int num,sum=0,remainder;
+    printf("Please Inter the five digit number or more you want:");
+    scanf("%d",&num);
+
+    while(num !=0){
+        remainder=num%10;
+        sum=sum+remainder;
+        num=num/10;
+    }
+    printf("Thse Sum of your input Digits:%d", sum);
+    return 0;
+}
+*/
+
+/* A five-digit number is entered through the keyboard. Write a program to obtain the reversed number and to determine 
+whether the original and reversed numbers are equal or not. 
+#include <stdio.h>
+int main(){
+    int original, rev = 0, rem = 0, temp;
+    printf("Enter a five-digit number: ");
+    scanf("%d", &original);
+
+    temp = original;
+    while(temp != 0){
+        rem = temp % 10;
+        rev = rev * 10 + rem;
+        temp = temp / 10;
+    }
+    
+    printf("Original number: %d\n", original);
+    printf("Reversed number: %d\n", rev);
+    
+    if (original == rev){
+        printf("The numbers are equal (palindrome).\n");
+    }
+    else{
+        printf("The numbers are not equal.\n");
+    }
+    
+    return 0;
+}*/
+
+
+
+
+/* Write a program to find the factorial value of any number entered through the keyboard. 
+#include <stdio.h>
+int main(){
+    int num, factorial = 1, i;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        for (i = 1; i <= num; i++) {
+            factorial = factorial * i;
+        }
+        printf("Factorial of %d is: %d\n", num, factorial);
+    }
+    
+    return 0;
+}
+*/
