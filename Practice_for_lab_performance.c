@@ -611,7 +611,8 @@ int main(){
 /* Write a program to find the factorial value of any number entered through the keyboard. 
 #include <stdio.h>
 int main(){
-    int num, factorial = 1, i;
+    int num,i;
+    long long factorial = 1;
     printf("Enter a number: ");
     scanf("%d", &num);
 
@@ -621,9 +622,116 @@ int main(){
         for (i = 1; i <= num; i++) {
             factorial = factorial * i;
         }
-        printf("Factorial of %d is: %d\n", num, factorial);
+        printf("Factorial of %d is: %11d\n", num, factorial);
     }
     
     return 0;
-}
-*/
+}*/
+
+/* Write a program to print all prime numbers in a range. 
+#include <stdio.h>
+
+int main(){
+    int start, end, i, j, is_prime;
+    
+    printf("Enter the start of range: ");
+    scanf("%d", &start);
+    
+    printf("Enter the end of range: ");
+    scanf("%d", &end);
+    
+    printf("Prime numbers between %d and %d are:\n", start, end);
+    
+    for (i = start; i <= end; i++) {
+        
+        
+        is_prime = 1;
+        for (j = 2;  j*j <= i; j++) {
+            if (i % j == 0) {
+                is_prime = 0;
+                break;
+            }
+        }
+        
+        if (is_prime) {
+            printf("%d\n", i);
+        }
+    }
+    
+    return 0;
+}*/
+
+/* Check the following number prime or not by taking input from the user. 
+#include <stdio.h>
+int main(){
+    int i,num,count;
+    printf("Enter the number:");
+    scanf("%d",&num);
+
+    for(i=2;i*i<=num;i++){
+         if (num % i ==0){
+            count=0;
+            break;
+            
+
+         }
+        }
+
+    if (count){
+        printf("The number %d is prime number", num);
+    }
+    else { printf("The number %d is not prime number", num);
+    }
+        
+    
+
+} */
+
+/* Print Fibonacci series up to a certain number by taking input from the user. 
+#include <stdio.h>
+int main(){
+    int n, i;
+    long long a = 0, b = 1, c;
+    
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+    
+    printf("Fibonacci series up to %d terms:\n", n);
+    
+    for(i = 0; i < n; i++){
+        printf("%lld ", a);
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    printf("\n");
+    
+    return 0;
+}*/
+
+/* Print the following pattern. 
+
+     1 
+
+     2 1 
+
+     3 2 1
+
+     4 3 2 1 
+
+     5 4 3 2 1 
+
+
+    #include <stdio.h>
+    int main(){
+        int i, j;
+        
+        for(i = 1; i <= 5; i++){
+            for(j = i; j >= 1; j--){
+                printf("%d ", j);
+            }
+            printf("\n");
+        }
+        
+        return 0;
+    }*/
