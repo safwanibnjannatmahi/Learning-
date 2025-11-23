@@ -632,7 +632,7 @@ int main(){
 #include <stdio.h>
 
 int main(){
-    int start, end, i, j, is_prime;
+    int start, end, i, col, is_prime;
     
     printf("Enter the start of range: ");
     scanf("%d", &start);
@@ -646,8 +646,8 @@ int main(){
         
         
         is_prime = 1;
-        for (j = 2;  j*j <= i; j++) {
-            if (i % j == 0) {
+        for (col = 2;  col*col <= i; col++) {
+            if (i % col == 0) {
                 is_prime = 0;
                 break;
             }
@@ -724,14 +724,231 @@ int main(){
 
     #include <stdio.h>
     int main(){
-        int i, j;
+        int row, col;
         
-        for(i = 1; i <= 5; i++){
-            for(j = i; j >= 1; j--){
-                printf("%d ", j);
+        for(row= 1; row <= 5; row++){
+            for(col = 1 ; col <= row; col++){
+                printf("%d ",row-col+1);
             }
             printf("\n");
         }
         
         return 0;
     }*/
+/* 5 4 3 2 1 
+   4 3 2 1 
+   3 2 1 
+   2 1 
+   1 
+   
+   #include <stdio.h>
+    int main(){
+        int row, col;
+        
+        for(row= 1; row <= 5; row++){
+            for(col = 5 ; col >= row; col--){
+                printf("%d ",col-row+1);
+            }
+            printf("\n");
+        }
+        
+        return 0;
+   */ 
+
+ //-------------------------------------------  array -----------------------------------------------------------------------
+
+ /*  Print an array that outputs only the odd number from the array.
+
+ #include <stdio.h>
+ int main(){
+    int arr[3],i,odd;
+    
+    printf("Plz enter the: ");
+    for(i=0;i< 3;i++){
+    scanf("%d",&arr[i]);
+    }
+
+    for (i=0;i<3;i++){
+        if (arr[i] % 2 !=0){
+            printf("%d Is a odd number\n", arr[i]);
+        }
+    }
+    return 0;
+ }
+*/
+
+/* Write a program to sum up the even elements of an array. 
+
+#include <stdio.h>
+int main(){
+int arr[100], range, i,sum=0,odd;
+
+printf("Enter the range of your array:");
+scanf("%d",&range);
+
+printf("Enter the value of %d Number:", range);
+for(i=0; i<range ; i++){
+    scanf("%d",&arr[i]);
+}
+
+for(i=0; i<range; i++){
+    if(arr[i] % 2 !=0){
+        sum=sum+arr[i];
+    }
+}
+printf("sum of all odd number is array is :%d", sum);
+return 0;
+}*/
+
+/* Write a program that prints arrays in reverse order.  
+#include <stdio.h>
+int main(){
+    int arr[100],i,range;
+
+
+    printf("Enter The range of the array: ");
+    scanf("%d", &range);
+    for (i=0; i< range; i++){
+        scanf("%d",&arr[i]);
+
+    }
+
+    printf("The reverse value of array:");
+    for (i=range-1;i>=0 ; i--){
+         printf("%d ",arr[i]);   
+    }
+return 0;
+}*/
+
+/* Write a program to find a maximum/minimum number from an array. 
+
+#include <stdio.h>
+int main(){
+    int arr[100],max,range,min,i;
+
+    printf("Enter the range of Array:");
+    scanf("%d",&range);
+
+    printf("Enter the value of %d array", range);
+    for(i=0; i< range ; i++){
+        scanf("%d",&arr[i]);
+    }
+    max= arr[0];
+    for(i=1;i < range ; i++){
+        if ( arr[i] > max){
+            max = arr[i];
+        }
+    }
+    printf("The maximun number array is:%d\n", max);
+
+    min=arr[0];
+    for(i=0;i<range; i++){
+        if( arr[i] < min){
+            min = arr[i];
+        }
+    }
+    printf("The minimum array is:%d", min);
+
+    return 0;
+}*/
+
+/* Write a program that searches a specific element from an array.  
+#include <stdio.h>
+int main(){
+    int arr[100], i, range, element_to_find;
+    int found = 0; // Flag to indicate if the element is found
+
+    printf("Enter the range of Array:");
+    scanf("%d", &range);
+
+    printf("Enter the %d elements of the array:\n", range);
+    for(i = 0 ; i < range ; i++){
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the element you want to search: ");
+    scanf("%d", &element_to_find);
+
+    for(i = 0; i < range; i++){
+        if(arr[i] == element_to_find){
+            found = 1; // Set flag to true if element is found
+            break;     // Exit loop once found
+        }
+    }
+
+    if(found){
+        printf("Element %d found at index %d.\n", element_to_find, i);
+    } else {
+        printf("Element %d not found in the array.\n", element_to_find);
+    }
+
+    return 0;
+}*/
+
+/* 6. Write a program to sort an array in ascending/ descending order. 
+
+#include <stdio.h>
+int main(){
+    int arr[100],i,range,j,temp;
+
+    printf("Enter the range of Array:");
+    scanf("%d", &range);
+
+    printf("Enter the %d elements of the array:\n", range);
+    for(i = 0 ; i < range ; i++){
+        scanf("%d", &arr[i]);
+    }
+
+    for( i = 0; i < range ; i++){
+        for(j = i + 1; j < range; j++){
+            if (arr[i] > arr[j]){ // For ascending order, change to arr[i] < arr[j] for descending
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    
+    printf("The ascending order: ");
+    for (i = 0; i < range ; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+
+    for( i = 0; i < range ; i++){
+        for(j = i + 1; j < range; j++){
+            if (arr[i] < arr[j]){ // For ascending order, change to arr[i] < arr[j] for descending
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    
+    printf("The descending order: ");
+    for (i = 0; i < range ; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+return 0;
+
+}*/
+
+/* 1
+   2 2
+   3 3 3
+   4 4 4 4
+   5 5 5 5 5  
+   #include <stdio.h>
+   int main(){
+    int row, col;
+
+    for (row=1;row<=5;row++){
+        for (col=1;col<=row;col++){
+
+        printf("%d ",row);}
+        printf("\n");
+    }
+return 0;
+   }*/
