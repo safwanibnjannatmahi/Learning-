@@ -1,1 +1,0 @@
-printf("The accending order numbers are:%d",arr[i]);
