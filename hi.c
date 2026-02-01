@@ -1,20 +1,6 @@
+/* Write a program to print the elements of a 2D array. */
 #include <stdio.h>
-int main(){
-    int row = 1;
-    int col=1;
-
-    while(row <= 5){
-        
-        while(col <= row){
-            col = col + 1;
-            printf("%d ", row);
-        }
-        while(col <= row){
-            col = col + 1;
-            printf("%d ", row);
-        }
-        row = row + 1;
-        printf("\n");
-    }
-    return 0;
+int mian(){
+    int arr[3][3],n,j,i;
+    
 }
