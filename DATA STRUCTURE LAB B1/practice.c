@@ -159,3 +159,43 @@ int main() {
     }
  }
  */
+//----------------------------------------------binary search--------------------------------------------------------
+/*  #include <stdio.h>
+ int main(){
+    int arr[50],i,n,min,max,mid,search,found=0;
+    printf("Enter the size of the array:");
+    scanf("%d",&n);
+
+    printf("Enter the elements of the array:");
+    for (i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+
+    printf("Enter the element search;");
+    scanf("%d",&search);
+
+    min=0;
+    max=n-1;
+    mid=(min+max)/2;
+    while (min<=max){
+        if (arr[mid]==search){
+            printf("Element found");
+            found=1;
+            break;
+        }
+        else if (arr[mid]<search){
+            min=mid+1;
+        }
+        else{
+            max=mid-1;
+        }
+        mid=(min+max)/2;
+    }
+    if (found==0){
+        printf("Element not found");
+    }
+    return 0;
+ } */
+ 
+
+ 
