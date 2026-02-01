@@ -32,7 +32,7 @@ int main() {
     return 0;
 } */
 //-------------------------booble sorting--------------------------------------
- #include <stdio.h>
+/*  #include <stdio.h>
  int main(){
     int arr[100],n,i,j,temp;
 
@@ -61,7 +61,7 @@ int main() {
     }
 
     return 0;
-} 
+} */ 
 
 //code for delete any elements from string or array-------------------------------------------------------------------------------------
 /*#include <stdio.h>
