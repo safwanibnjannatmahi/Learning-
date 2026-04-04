@@ -1,20 +1,18 @@
-#include<stdio.h>
 
-int main(){
+#include <stdio.h>
+
+int main() {
     int ID;
-    printf("SAFWAN IBN JANNAT MAHI\n");
-     printf("Your DIU ID:");
-        scanf("%d", &ID);
-        printf("Your id Value: %d\n", ID);
-    if (ID % 2 == 0)
-    {
+
+    printf("Name: SAFWAN IBN JANNAT MAHI\n");
+    printf("Enter your student ID: ");
+    scanf("%d", &ID);
+
+    if (ID % 2 == 0) {
         printf("ID is Even\n");
-    }
-    else
-    {
+    } else {
         printf("ID is Odd\n");
     }
 
     return 0;
-
 }
