@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Vs Code/DATA STRUCTURE LAB B1",
-      "program": "d:/Vs Code/DATA STRUCTURE LAB B1/build/Debug/outDebug",
+      "cwd": "d:/Vs Code",
+      "program": "d:/Vs Code/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
